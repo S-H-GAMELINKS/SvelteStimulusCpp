@@ -1,5 +1,6 @@
 {
     "dependencies": {
-        "svelte": "^3.4.4"
+        "svelte": "^3.4.4",
+        "svelte-loader": "^2.13.4"
     }
 }
