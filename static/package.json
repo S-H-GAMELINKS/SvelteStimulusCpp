@@ -1,6 +1,7 @@
 {
     "dependencies": {
         "svelte": "^3.4.4",
-        "svelte-loader": "^2.13.4"
+        "svelte-loader": "^2.13.4",
+        "webpack": "^4.32.2"
     }
 }
