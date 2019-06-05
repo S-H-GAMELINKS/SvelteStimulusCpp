@@ -1,6 +1,7 @@
 #include <fstream>
 #include <sstream>
 #include <string>
+#include <array>
 #include "cpp-httplib/httplib.h"
 
 const std::string load_static(const std::string& path) {
@@ -23,9 +24,12 @@ int main() {
 
     const std::string js = load_static("static/index.js");
 
-    svr.Get("/", [&](const httplib::Request& req, httplib::Response& res){
-        res.set_content(html, "text/html");
-    });
+    const std::array<std::string, 3> routes = {"/", "/about", "/contact"};
+
+    for(auto&& r : routes)
+        svr.Get(r.c_str(), [&](const httplib::Request& req, httplib::Response& res){
+            res.set_content(html, "text/html");
+        });
 
     svr.Get("/index.js", [&](const httplib::Request& req, httplib::Response& res){
         res.set_content(js, "text/javascript");
