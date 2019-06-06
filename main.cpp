@@ -24,7 +24,7 @@ int main() {
 
     const std::string js = load_static("static/index.js");
 
-    const std::array<std::string, 3> routes = {"/", "/about", "/contact"};
+    const std::array<std::string, 4> routes = {"/", "/about", "/contact", "/count"};
 
     for(auto&& r : routes)
         svr.Get(r.c_str(), [&](const httplib::Request& req, httplib::Response& res){
