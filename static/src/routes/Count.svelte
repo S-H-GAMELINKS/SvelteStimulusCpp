@@ -14,6 +14,8 @@
     Clicked { counter } { counter === 1 ? 'time' : 'times' }
 </button>
 
+{#if counter > 0}
 <button on:click={reset}>
     Reset
 </button>
+{/if}
